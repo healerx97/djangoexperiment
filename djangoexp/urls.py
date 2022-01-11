@@ -20,5 +20,6 @@ from apptwo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.sample_view, name = "Home")
+    path('', views.sample_view, name = "Home"),
+    path('json/', views.sample_json_res, name = "json"),
 ]
