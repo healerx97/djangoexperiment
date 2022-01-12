@@ -7,3 +7,4 @@ class Yo():
 
 obj = Yo()
 print(obj)
+print(obj.myName)
