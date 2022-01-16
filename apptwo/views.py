@@ -6,6 +6,11 @@ from rest_framework.decorators import api_view, renderer_classes, parser_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from rest_framework.parsers import JSONParser
 
+
+#testing csv read, write
+import csv
+
+
 jsonobj = {
     "glossary": {
         "title": "example glossary",
@@ -36,4 +41,14 @@ def sample_view(*args, **kwargs):
 @api_view(('GET',))
 @parser_classes([JSONParser])
 def sample_json_res(*args, **kwargs):
+    return Response(jsonobj)
+
+@api_view(('GET',))
+@parser_classes([JSONParser])
+def sample_csv_res(*args, **kwargs):
+    with open('sample.csv', 'w') as file:
+        f = csv.writer(file)
+        f.writerow(["one", "two", "three"])
+        f.writerow([1,2,3])
+
     return Response(jsonobj)
