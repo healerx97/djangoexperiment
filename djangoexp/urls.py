@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.sample_view, name = "Home"),
     path('json/', views.sample_json_res, name = "json"),
+    path('csv/', views.sample_csv_res, name = "csv"),
 ]
