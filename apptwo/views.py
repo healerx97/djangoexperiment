@@ -50,5 +50,9 @@ def sample_csv_res(*args, **kwargs):
         f = csv.writer(file)
         f.writerow(["one", "two", "three"])
         f.writerow([1,2,3])
-
-    return Response(jsonobj)
+        file.flush()
+    response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="sample.csv"'},
+    )
+    return response
