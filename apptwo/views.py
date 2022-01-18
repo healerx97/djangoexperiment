@@ -51,8 +51,11 @@ def sample_csv_res(*args, **kwargs):
         f.writerow(["one", "two", "three"])
         f.writerow([1,2,3])
         file.flush()
-    response = HttpResponse(
-        content_type='text/csv',
-        headers={'Content-Disposition': 'attachment; filename="sample.csv"'},
-    )
-    return response
+
+    with open('sample.csv') as outputfile:
+        response = HttpResponse(
+            outputfile,
+            content_type='text/csv',
+            headers={'Content-Disposition': 'attachment; filename="sample.csv"'},
+        )
+        return response
