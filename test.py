@@ -1,10 +1,6 @@
-class Yo():
-    myName = "Kenny"
-
-    def __str__(self):
-        return self.myName + '22'
-
-
-obj = Yo()
-print(obj)
-print(obj.myName)
+class Test1():
+    def samplefunction1():
+        return "hello"
+class Test2():
+    def fmasdf():
+        return "asdf"
