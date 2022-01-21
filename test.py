@@ -5,3 +5,9 @@ class Test2:
         return True
     def asdf():
         return False
+    def fmasdf():
+        return "asdf"
+class Test1():
+    def samplefunction1():
+        return "hello"
+    
