@@ -3,3 +3,5 @@ class Test2:
         self.my = "test2"
     def addedfcn():
         return True
+    def asdf():
+        return False
