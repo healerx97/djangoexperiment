@@ -2,9 +2,6 @@ import feedparser
 import csv
 parsedFeed = feedparser.parse("https://techcrunch.com/feed/")
 
-entry = parsedFeed.entries[2]
-print(entry.keys())
-
 
 
 with open('rssFeed.csv', 'w') as file:
