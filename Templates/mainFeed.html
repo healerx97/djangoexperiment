@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Rendering RSS
+{% endblock title %}
+
+
+{% block others %}
+
+{% endblock others %}
+
+
+{% block content %}
+    <div class='flex bg-red'>
+        {% for entry in feed.entries %}
+            <div class= 'flex'>
+                {{entry.title}}
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock content %}

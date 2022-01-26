@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views import View
 import json
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, renderer_classes, parser_classes
 from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
 from rest_framework.parsers import JSONParser
-
+from django.utils.decorators import method_decorator
+import feedparser
 
 #testing csv read, write
 import csv
@@ -59,3 +61,11 @@ def sample_csv_res(*args, **kwargs):
             headers={'Content-Disposition': 'attachment; filename="sample.csv"'},
         )
         return response
+
+class RenderedFeed(View):
+    def get(self, request, *args, **kwargs):
+        parsedFeed = feedparser.parse("https://techcrunch.com/feed/")
+
+        return render(request, 'mainFeed.html', {
+            'feed': parsedFeed
+        })
