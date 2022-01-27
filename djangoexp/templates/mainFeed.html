@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Rendering RSS
+{% endblock title %}
+
+
+{% block others %}
+
+{% endblock others %}
+
+
+{% block content %}
+    <div class=''>
+        <div class='flex-col border'>
+            {% for entry in feed.entries %}
+                <div class='flex flex-row gap-3 justify-items-start'>
+                    <div class= 'flex-1 p-3'>
+                        {{entry.title}}
+                    </div>
+                    <div class= 'justify-self-end'>
+                        {{entry.published}}
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

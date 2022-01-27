@@ -28,4 +28,5 @@ urlpatterns = [
     path('json/', views.sample_json_res, name = "json"),
     path('csv/', views.sample_csv_res, name = "csv"),
     path('',include('apptwo.urls',namespace='apptwo')),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
