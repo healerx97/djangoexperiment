@@ -65,7 +65,7 @@ def sample_csv_res(*args, **kwargs):
 class RenderedFeed(View):
     def get(self, request, *args, **kwargs):
         parsedFeed = feedparser.parse("https://techcrunch.com/feed/")
-
+        print(parsedFeed.feed.title)
         return render(request, 'mainFeed.html', {
             'feed': parsedFeed
         })
