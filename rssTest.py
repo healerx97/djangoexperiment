@@ -2,14 +2,14 @@ import feedparser
 import csv
 parsedFeed = feedparser.parse("https://techcrunch.com/feed/")
 
+print(parsedFeed.entries[0].keys())
 
-
-with open('rssFeed.csv', 'w') as file:
-    f = csv.writer(file)
-    f.writerow(['Title', 'Summary', 'Published Date'])
-    for entry in parsedFeed.entries:
-        s = [entry['title'], entry['summary'], entry['published']]
-        f.writerow(s)
+# with open('rssFeed.csv', 'w') as file:
+#     f = csv.writer(file)
+#     f.writerow(['Title', 'Summary', 'Published Date'])
+#     for entry in parsedFeed.entries:
+#         s = [entry['title'], entry['summary'], entry['published']]
+#         f.writerow(s)
 
 
 

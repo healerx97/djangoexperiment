@@ -7,4 +7,13 @@ class SampleApp(models.Model):
 
 class SampleModelTwo(models.Model):
     name = models.TextField()
+
+class Feed(models.Model):
+    title = models.TextField()
+    author = models.TextField()
+
+
+class Publisher(models.Model):
+    feeds = models.ManyToManyField(feed, on_delete=models.CASCADE)
+    
 # Create your models here.
