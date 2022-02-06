@@ -1,9 +1,18 @@
 import feedparser
 import csv
-parsedFeed = feedparser.parse("https://techcrunch.com/feed/")
+import sys
+parsedFeed = feedparser.parse(sys.argv[1])
 
-print(parsedFeed.entries[0].keys())
+# print(parsedFeed.entries[0].keys())
 
+
+def main(feedUrl):
+    parsedFeed = feedparser.parse(feedUrl)
+    print(parsedFeed.entries[0].keys())
+
+
+
+main(sys.argv[1])
 # with open('rssFeed.csv', 'w') as file:
 #     f = csv.writer(file)
 #     f.writerow(['Title', 'Summary', 'Published Date'])
